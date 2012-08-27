@@ -19,7 +19,13 @@ LOCAL_SRC_FILES := \
     setprop.c \
     default_recovery_ui.c \
     adb_install.c \
-    verifier.c
+    verifier.c \
+    ubi/ubiutils-common.c \
+    ubi/libubi.c
+
+LOCAL_C_INCLUDES += \
+    device/wayteq/w28ref/mtd-utils/include/ \
+    device/wayteq/w28ref/mtd-utils/ubi-utils/include
 
 ADDITIONAL_RECOVERY_FILES := $(shell echo $$ADDITIONAL_RECOVERY_FILES)
 LOCAL_SRC_FILES += $(ADDITIONAL_RECOVERY_FILES)
